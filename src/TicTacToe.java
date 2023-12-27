@@ -15,7 +15,7 @@ public class TicTacToe implements ActionListener {
         frame.setTitle("Tic Tac Toe");
         frame.setSize(500,500);
         frame.setVisible(true);
-        //frame.getContentPane().setBackground(new Color(255, 229, 236));
+        frame.getContentPane().setBackground(new Color(255, 229, 236));
         frame.setLayout(new BorderLayout());
         frame.setResizable(true);
 
@@ -45,7 +45,7 @@ public class TicTacToe implements ActionListener {
             if (e.getSource() == buttons[i]) {
                 if (player1_turn) {
                     if (buttons[i].getText() == "") {
-                        buttons[i].setForeground(new Color(255, 179, 198));
+                        buttons[i].setForeground(new Color(111, 160, 251));
                         buttons[i].setText("X");
                         player1_turn = false;
                         check();
@@ -170,21 +170,39 @@ public class TicTacToe implements ActionListener {
         }
     }
     public void xWins(int a, int b, int c) {
-        buttons[a].setBackground(Color.PINK);
-        buttons[b].setBackground(Color.PINK);
-        buttons[c].setBackground(Color.PINK);
+        buttons[a].setBackground(new Color(123, 246, 114));
+        buttons[b].setBackground(new Color(123, 246, 114));
+        buttons[c].setBackground(new Color(123, 246, 114));
+
+        buttons[a].setOpaque(true);
+        buttons[b].setOpaque(true);
+        buttons[c].setOpaque(true);
+
 
         for(int i = 0; i < buttons.length; i++) {
             buttons[i].setEnabled(false);
         }
     }
     public void oWins(int a, int b, int c) {
-        buttons[a].setBackground(Color.PINK);
-        buttons[b].setBackground(Color.PINK);
-        buttons[c].setBackground(Color.PINK);
+        buttons[a].setBackground(new Color(123, 246, 114));
+        buttons[b].setBackground(new Color(123, 246, 114));
+        buttons[c].setBackground(new Color(123, 246, 114));
+
+        buttons[a].setOpaque(true);
+        buttons[b].setOpaque(true);
+        buttons[c].setOpaque(true);
 
         for(int i = 0; i < buttons.length; i++) {
             buttons[i].setEnabled(false);
         }
     }
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+
+        //button_panel.setVisible(false);
 }
+
